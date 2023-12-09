@@ -1,0 +1,4 @@
+#my virtual environment
+myenv/**
+venv/**
+blog_venv/**
