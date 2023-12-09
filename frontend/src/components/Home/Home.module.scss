@@ -1,0 +1,31 @@
+@import "@/variables";
+
+.home {
+  color: $primary-font-color;
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  gap: 40px;
+  text-align: center;
+  padding: 0;
+  margin: auto;
+  padding: 0 1rem;
+
+  h2 {
+    margin: auto;
+    font-size: 18px;
+  }
+
+  h1 {
+    max-width: 1000px;
+    font-size: 4rem;
+    background: -webkit-linear-gradient($primary-color, $secondary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}

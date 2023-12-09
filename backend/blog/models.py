@@ -6,6 +6,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
+    image_cover = models.ImageField(upload_to="thoughts", default="")
     likes = models.IntegerField(null=True,blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
