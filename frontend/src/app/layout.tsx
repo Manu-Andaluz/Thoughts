@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.scss";
+import TopAppBar from "@/components/TopAppBar/TopAppBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>{/* Include your meta tags, title, stylesheets, etc. here */}</head>
+      <body className={inter.className}>
+        <TopAppBar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
