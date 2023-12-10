@@ -1,8 +1,23 @@
+@import "@/variables";
+
 .post {
   display: grid;
-  grid-template-columns: 1fr auto;
   align-items: center;
+  place-content: center;
   gap: 30px;
+  border-radius: 4px;
+  padding: 10px;
+
+  @media screen and (min-width: 780px) {
+    grid-template-columns: 1fr auto;
+  }
+
+  img {
+    display: flex;
+    margin: 0 auto;
+    @media screen and (min-width: 780px) {
+    }
+  }
 }
 
 .post_details {
