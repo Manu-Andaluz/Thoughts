@@ -7,14 +7,15 @@ const TopAppBar = () => {
     <header className={style.top_app_bar}>
       <nav>
         <LogoIcon />
-        <ul>
-          <li>Daily Digest</li>
-          <li>Design Tools</li>
-          <li>Tutorials</li>
-          <li>
-            <button className={style.button_1}>Subscribe</button>
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <li>Daily Digest</li>
+            <li>Design Tools</li>
+            <li>Tutorials</li>
+            <li></li>
+          </ul>
+          <button className={style.button_1}>Subscribe</button>
+        </div>
       </nav>
     </header>
   );

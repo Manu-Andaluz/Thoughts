@@ -1,0 +1,43 @@
+@import "@/variables";
+
+.recent_posts {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 1rem auto;
+  height: 100vh;
+  max-width: 1000px;
+
+  div {
+    display: flex;
+    margin: 0 auto;
+    height: fit-content;
+    justify-content: space-around;
+    width: 100%;
+
+    h2 {
+      font-size: 22px;
+    }
+  }
+
+  section {
+    display: grid;
+    place-content: center;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 100px;
+    gap: 40px;
+  }
+}
+
+.see_more_btn {
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background $default-transition;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.see_more_btn:hover {
+  background-color: $primary-text-hover;
+}

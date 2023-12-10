@@ -1,0 +1,21 @@
+.post {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 30px;
+}
+
+.post_details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h4 {
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+}
