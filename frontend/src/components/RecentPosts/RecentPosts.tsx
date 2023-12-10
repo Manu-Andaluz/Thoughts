@@ -24,8 +24,8 @@ const RecentPosts = () => {
       </div>
 
       <section>
-        {posts?.map((item: Post) => (
-          <Item title={item.title} />
+        {posts?.map((item: Post, i: number) => (
+          <Item title={item.title} key={i} />
         ))}
       </section>
     </section>

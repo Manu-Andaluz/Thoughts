@@ -1,0 +1,202 @@
+@import "@/variables";
+
+.dialog {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  width: calc(100% - 80px);
+  min-height: 100vh;
+  border-radius: 0px 16px 16px 0px;
+  border: 1px solid transparent;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.dialog[open] {
+  animation-name: openDrawer;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.close[open] {
+  animation-name: closeDrawer;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.close::backdrop {
+  animation-name: fadeOut;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes openDrawer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes closeDrawer {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.navbar {
+  border-radius: 4px;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);
+  padding: 12px;
+}
+
+.list {
+  margin-top: 26px;
+  text-decoration: none;
+  list-style: none;
+  display: grid;
+  padding: 0;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user_info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  text-overflow: ellipsis;
+}
+
+.user_info p {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.user_picture {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user_mail {
+  white-space: nowrap;
+  width: 25ch;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.anchor {
+  width: 0;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.account_link {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: $primary-blue;
+  font-weight: 600;
+  font-size: 14px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.icon_list_active {
+  border-radius: 28px;
+  background-color: $secondary-font-color;
+  padding: 0 12px;
+}
+
+.icon_list {
+  color: $primary-font-color;
+  box-sizing: inherit;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 56px;
+  border-radius: 28px;
+  padding: 0 16px;
+  transition: all 300ms ease;
+  text-decoration: none;
+}
+
+.icon_list:focus {
+  outline: none;
+}
+
+.icon_list:hover {
+  background-color: $primary-text-hover;
+}
+
+.li_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: $secondary-font-color;
+}
+
+.icon_list span {
+  font-variation-settings: "wght" 350, "GRAD" 0, "opsz" 24;
+}
+
+.icon_list_active span {
+  font-variation-settings: "FILL" 1, "wght" 350, "GRAD" 0, "opsz" 24;
+}
+
+@media only screen and (min-width: 500px) {
+  .dialog {
+    width: 360px;
+  }
+}
+
+.subTitle {
+  display: flex;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.scss";
 import TopAppBar from "@/components/TopAppBar/TopAppBar";
+import ModalNavigationDrawer from "@/components/ModalNavigationDrawer/ModalNavigationDrawer";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <head>{/* Include your meta tags, title, stylesheets, etc. here */}</head>
       <body className={inter.className}>
         <TopAppBar />
+        <ModalNavigationDrawer />
         <main>{children}</main>
       </body>
     </html>

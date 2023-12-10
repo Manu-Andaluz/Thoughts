@@ -3,3 +3,22 @@
   margin: 0;
   padding: 0;
 }
+
+::-webkit-scrollbar {
+  width: 18px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-block: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 160, 160);
+  border: 5px solid white;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(97, 97, 97);
+}
