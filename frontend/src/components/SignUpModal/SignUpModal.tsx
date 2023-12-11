@@ -27,17 +27,13 @@ const SignUpModal = () => {
 
         <form className={style.from_container}>
           <div className={style.input_container}>
-            <input type="text" id="name" required />
-            <label htmlFor="name">Name</label>
-          </div>
-          <div className={style.input_container}>
-            <input type="text" id="email" required />
-            <label htmlFor="email">Email</label>
+            <input type="text" id="username" required />
+            <label htmlFor="username">User Name</label>
           </div>
 
-          <div className={style.textarea_container}>
-            <textarea name="message" id="message" required></textarea>
-            <label htmlFor="message">Message</label>
+          <div className={style.input_container}>
+            <input type="text" id="password" required />
+            <label htmlFor="password">Password</label>
           </div>
 
           <div className={style.form_buttons}>
