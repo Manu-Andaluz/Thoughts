@@ -204,23 +204,25 @@
 }
 
 .form_buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   place-content: center;
-  button {
-    width: 80%;
-    margin-top: 10px;
-    cursor: pointer;
-    background-color: $secondary-color;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: $secondary-font-color;
-    font-size: 16px;
+}
 
-    &:hover {
-      background-color: $secondary-color-hover;
-    }
+.btn {
+  width: 80%;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: $secondary-color;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: $secondary-font-color;
+  font-size: 16px;
+
+  &:hover {
+    background-color: $secondary-color-hover;
   }
 }
 
