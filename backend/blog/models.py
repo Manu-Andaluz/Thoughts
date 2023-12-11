@@ -17,3 +17,5 @@ class Post(models.Model):
 
 class Image(models.Model):
     file = models.FileField(upload_to="thoughts", default="")
+
+    

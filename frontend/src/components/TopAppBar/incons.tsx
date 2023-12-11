@@ -12,3 +12,17 @@ export const LogoIcon = () => (
     />
   </svg>
 );
+
+export const BurgerIcon = () => (
+  <svg
+    width="26"
+    height="26"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M5 7H19" stroke="#222222" strokeLinecap="round" />
+    <path d="M5 12H19" stroke="#222222" strokeLinecap="round" />
+    <path d="M5 17H19" stroke="#222222" strokeLinecap="round" />
+  </svg>
+);

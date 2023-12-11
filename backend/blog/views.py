@@ -2,9 +2,7 @@ from rest_framework import viewsets
 from rest_framework.response import Response
 from .models import Post, Image
 from .serializers import PostSerializer, ImageSerializer
-
 from django.http import JsonResponse
-import cloudinary.uploader
 # Create your views here.
 # def home(request):
 #     return render(request, 'home.html',{})

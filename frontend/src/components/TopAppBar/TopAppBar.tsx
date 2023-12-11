@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import style from "./TopAppBar.module.scss";
-import { LogoIcon } from "./incons";
+import { BurgerIcon, LogoIcon } from "./incons";
 
 const TopAppBar = () => {
   const openDrawerNav = () => {
@@ -24,7 +24,9 @@ const TopAppBar = () => {
           <button className={style.button_1}>Subscribe</button>
         </div>
 
-        <span onClick={openDrawerNav}>Open</span>
+        <span onClick={openDrawerNav}>
+          <BurgerIcon />
+        </span>
       </nav>
     </header>
   );
