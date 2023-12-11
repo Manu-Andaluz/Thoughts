@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "blog",
     "account",
     "rest_framework",
-    "rest_framework_simplejwt",
+    "rest_framework.authtoken",
     "corsheaders",
     "cloudinary",   
 ]
@@ -153,14 +153,3 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-    ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-}

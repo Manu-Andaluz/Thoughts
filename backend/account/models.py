@@ -1,8 +1,10 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
-class User(models.Model):
-    username = models.TextField(max_length=191)
-    password = models.TextField()
-    email = models.EmailField(null=True, blank=True)
+class User(AbstractUser):
+    class Meta:
+        # Add the following line to avoid conflicts with 'groups' reverse accessor
+        app_label = 'accounts'
+        
+    pass
