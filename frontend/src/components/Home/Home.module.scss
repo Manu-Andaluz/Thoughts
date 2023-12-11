@@ -19,7 +19,7 @@
 
   h1 {
     max-width: 1000px;
-    font-size: 4rem;
+    font-size: 3rem;
     background: -webkit-linear-gradient(
       50deg,
       $primary-color,
@@ -27,6 +27,10 @@
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (min-width: 700px) {
+      font-size: 4rem;
+    }
   }
 
   h3 {
