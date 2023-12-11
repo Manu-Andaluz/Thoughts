@@ -1,0 +1,249 @@
+@import "@/variables";
+
+.dialog {
+  margin: auto;
+  padding: 0;
+  border: 0;
+  min-height: 100vh;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.3);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  animation-fill-mode: forwards;
+  padding: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .dialog::backdrop {
+    backdrop-filter: blur(16px) saturate(150%);
+  }
+}
+
+.dialog[open] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: calc((100%) - 3em);
+  max-height: calc((100%) - 3rem);
+
+  animation-name: dialogIn;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  animation-fill-mode: forwards;
+  background: none;
+}
+
+.dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.container {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 28px;
+  width: 600px;
+}
+
+.close[open] {
+  animation-name: dialogOut;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  animation-fill-mode: forwards;
+}
+
+.close::backdrop {
+  animation-name: fadeOut;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: scale(115%);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+@keyframes dialogOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+}
+
+.from_container {
+  display: grid;
+  gap: 16px;
+  margin: 2rem 0;
+}
+
+.input_container {
+  position: relative;
+}
+
+.input_container input {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 56px;
+  transition: all 300ms ease;
+  background: rgba(0, 77, 235, 0.08);
+  padding: 1.5rem 1rem 0.5rem 10px;
+  font-size: 1rem;
+}
+
+.input_container input:focus {
+  outline-width: 0;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.input_container label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 300ms ease;
+}
+
+.input_container input:focus + label {
+  top: -10%;
+  left: 10px;
+  right: 0;
+  transform: translateY(0%);
+  font-size: 12px;
+  color: blue;
+}
+
+.input_container input:valid + label {
+  top: -10%;
+  left: 10px;
+  right: 0;
+  transform: translateY(0%);
+  font-size: 12px;
+  color: blue;
+}
+
+.textarea_container {
+  position: relative;
+}
+
+.textarea_container textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  transition: all 300ms ease;
+  background: rgba(0, 77, 235, 0.08);
+  height: fit-content;
+  font-size: 1rem;
+  padding: 1.5rem 1rem 0.5rem 10px;
+}
+
+.textarea_container textarea:focus {
+  outline-width: 0;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.textarea_container label {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 300ms ease;
+}
+
+.textarea_container textarea:focus + label {
+  top: -10%;
+  left: 10px;
+  right: 0;
+  transform: translateY(0%);
+  font-size: 12px;
+  color: blue;
+}
+
+.form_buttons {
+  display: flex;
+  width: 100%;
+  place-content: center;
+  button {
+    width: 80%;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: $secondary-color;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: $secondary-font-color;
+    font-size: 16px;
+
+    &:hover {
+      background-color: $secondary-color-hover;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .section {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: none;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .contact_remind {
+    position: inherit;
+  }
+
+  .contact_container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form_btn {
+    grid-template-columns: none;
+  }
+}

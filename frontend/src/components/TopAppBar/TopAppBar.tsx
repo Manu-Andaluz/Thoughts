@@ -6,7 +6,13 @@ import { BurgerIcon, LogoIcon } from "./incons";
 const TopAppBar = () => {
   const openDrawerNav = () => {
     const element = document.getElementById("nav-modal") as HTMLDialogElement;
-    console.log(element);
+    element?.showModal();
+  };
+
+  const openSignUp = () => {
+    const element = document.getElementById(
+      "signup-modal"
+    ) as HTMLDialogElement;
     element?.showModal();
   };
 
@@ -21,7 +27,9 @@ const TopAppBar = () => {
             <li>Tutorials</li>
             <li></li>
           </ul>
-          <button className={style.button_1}>Subscribe</button>
+          <button className={style.button_1} onClick={openSignUp}>
+            Login
+          </button>
         </div>
 
         <span onClick={openDrawerNav}>
