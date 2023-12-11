@@ -26,7 +26,11 @@ const SignUpModal = () => {
         </span>
         <h3>Sign up</h3>
 
-        <form className={style.from_container} id="sign-up-form">
+        <form
+          className={style.from_container}
+          id="sign-up-form"
+          onSubmit={(e: any) => e.preventDefault()}
+        >
           <div className={style.input_container}>
             <input type="text" id="username" name="username" required />
             <label htmlFor="username">User Name</label>
