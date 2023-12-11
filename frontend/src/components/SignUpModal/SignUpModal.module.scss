@@ -13,13 +13,8 @@
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
   animation-fill-mode: forwards;
+  backdrop-filter: blur(16px) saturate(150%);
   padding: 0;
-}
-
-@media only screen and (min-width: 600px) {
-  .dialog::backdrop {
-    backdrop-filter: blur(16px) saturate(150%);
-  }
 }
 
 .dialog[open] {

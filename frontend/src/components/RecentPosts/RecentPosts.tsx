@@ -12,7 +12,6 @@ const RecentPosts = () => {
       const data = await getRecentPosts();
       setPosts(data);
     };
-
     getData();
   }, []);
 

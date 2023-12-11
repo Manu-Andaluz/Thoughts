@@ -1,10 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import style from "./SignUpModal.module.scss";
 import { CloseIcon } from "../ModalNavigationDrawer/iconts";
 import { signUp } from "./hooks/Post/signUp";
+import { login } from "./hooks/Post/login";
 
 const SignUpModal = () => {
+  const [show, setShow] = useState("login");
+
   const closeDialog = (e: any) => {
     const element = document.getElementById(
       "signup-modal"
@@ -24,35 +27,76 @@ const SignUpModal = () => {
         <span className={style.close} onClick={closeDialog}>
           <CloseIcon />
         </span>
-        <h3>Sign up</h3>
+        {show === "login" ? (
+          <>
+            <h3>Login</h3>
 
-        <form
-          className={style.from_container}
-          id="sign-up-form"
-          onSubmit={(e: any) => e.preventDefault()}
-        >
-          <div className={style.input_container}>
-            <input type="text" id="username" name="username" required />
-            <label htmlFor="username">User Name</label>
-          </div>
+            <form
+              className={style.from_container}
+              id="login-up-form"
+              onSubmit={(e: any) => e.preventDefault()}
+            >
+              <div className={style.input_container}>
+                <input type="text" id="username" name="username" required />
+                <label htmlFor="username">User Name</label>
+              </div>
 
-          <div className={style.input_container}>
-            <input type="text" id="email" name="email" required />
-            <label htmlFor="email">Email</label>
-          </div>
+              <div className={style.input_container}>
+                <input type="password" id="password" name="password" required />
+                <label htmlFor="password">Password</label>
+              </div>
 
-          <div className={style.input_container}>
-            <input type="text" id="password" name="password" required />
-            <label htmlFor="password">Password</label>
-          </div>
+              <div className={style.form_buttons}>
+                <button className={style.btn} onClick={login}>
+                  Login
+                </button>
+                <button
+                  className="unlined-btn"
+                  onClick={() => setShow("register")}
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </>
+        ) : (
+          <>
+            <h3>Sign up</h3>
 
-          <div className={style.form_buttons}>
-            <button className={style.btn} onClick={signUp}>
-              Login
-            </button>
-            <button className="unlined-btn">Go to login</button>
-          </div>
-        </form>
+            <form
+              className={style.from_container}
+              id="sign-up-form"
+              onSubmit={(e: any) => e.preventDefault()}
+            >
+              <div className={style.input_container}>
+                <input type="text" id="username" name="username" required />
+                <label htmlFor="username">User Name</label>
+              </div>
+
+              <div className={style.input_container}>
+                <input type="text" id="email" name="email" required />
+                <label htmlFor="email">Email</label>
+              </div>
+
+              <div className={style.input_container}>
+                <input type="password" id="password" name="password" required />
+                <label htmlFor="password">Password</label>
+              </div>
+
+              <div className={style.form_buttons}>
+                <button className={style.btn} onClick={signUp}>
+                  Sign Up
+                </button>
+                <button
+                  className="unlined-btn"
+                  onClick={() => setShow("login")}
+                >
+                  Go to login
+                </button>
+              </div>
+            </form>
+          </>
+        )}
       </section>
     </dialog>
   );

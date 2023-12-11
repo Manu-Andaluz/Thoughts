@@ -1,9 +1,12 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./TopAppBar.module.scss";
 import { BurgerIcon, LogoIcon } from "./incons";
+import { signOut } from "../utils/hooks/signOut";
 
 const TopAppBar = () => {
+  const [user, setUser] = useState<string>();
+
   const openDrawerNav = () => {
     const element = document.getElementById("nav-modal") as HTMLDialogElement;
     element?.showModal();
@@ -16,6 +19,11 @@ const TopAppBar = () => {
     element?.showModal();
   };
 
+  useEffect(() => {
+    const isUser = localStorage.getItem("userToken");
+    if (isUser) setUser((data) => isUser);
+  }, []);
+
   return (
     <header className={style.top_app_bar}>
       <nav>
@@ -27,9 +35,21 @@ const TopAppBar = () => {
             <li>Tutorials</li>
             <li></li>
           </ul>
-          <button className={style.button_1} onClick={openSignUp}>
-            Login
-          </button>
+          {user ? (
+            <button
+              className={style.button_1}
+              onClick={() => {
+                signOut();
+                setUser((data) => "");
+              }}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <button className={style.button_1} onClick={openSignUp}>
+              Login
+            </button>
+          )}
         </div>
 
         <span onClick={openDrawerNav}>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./ModalNavigationDrawer.module.scss";
 import Link from "next/link";
 import {
@@ -14,9 +14,12 @@ import {
   SavedIcon,
 } from "./iconts";
 import { usePathname } from "next/navigation";
+import { signOut } from "../utils/hooks/signOut";
 
 const ModalNavigationDrawer = () => {
+  const [user, setUser] = useState<string>();
   const path = usePathname();
+  const account = false;
 
   const closeDrawerNav = (e: any) => {
     const element = document.getElementById("nav-modal") as HTMLDialogElement;
@@ -29,8 +32,20 @@ const ModalNavigationDrawer = () => {
     element.addEventListener("animationend", animationEndHandler);
   };
 
+  const openSignUp = () => {
+    const element = document.getElementById(
+      "signup-modal"
+    ) as HTMLDialogElement;
+    element?.showModal();
+  };
+
+  useEffect(() => {
+    const isUser = localStorage.getItem("userToken");
+    if (isUser) setUser((data) => isUser);
+  }, []);
+
   return (
-    <dialog className={style.dialog} id="nav-modal">
+    <dialog className={style.dialog} id="nav-modal" onClick={closeDrawerNav}>
       <aside id="modal-navigation-drawer-container">
         <nav className={style.navbar}>
           <span className={style.close} onClick={closeDrawerNav}>
@@ -110,12 +125,33 @@ const ModalNavigationDrawer = () => {
             <li>
               <p className={style.subTitle}>Profile</p>
             </li>
-            <li>
-              <Link href={``} className={style.icon_list}>
-                <AccountIcon />
-                Account
-              </Link>
-            </li>
+            {user ? (
+              <li>
+                <Link
+                  href={``}
+                  className={style.icon_list}
+                  onClick={() => {
+                    signOut();
+                    setUser((data) => "");
+                  }}
+                >
+                  <AccountIcon />
+                  Sign Out
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link
+                  href={``}
+                  className={style.icon_list}
+                  onClick={openSignUp}
+                >
+                  <AccountIcon />
+                  Sign Up
+                </Link>
+              </li>
+            )}
+
             <li>
               <p className={style.subTitle}>Other</p>
             </li>
