@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import style from "./TopAppBar.module.scss";
 import { BurgerIcon, LogoIcon } from "./incons";
 import { signOut } from "../utils/hooks/signOut";
+import Link from "next/link";
 
 const TopAppBar = () => {
   const [user, setUser] = useState<string>();
@@ -22,17 +23,22 @@ const TopAppBar = () => {
   useEffect(() => {
     const isUser = localStorage.getItem("userToken");
     if (isUser) setUser((data) => isUser);
-  }, []);
+    console.log("asdsad");
+  }, [localStorage]);
 
   return (
     <header className={style.top_app_bar}>
       <nav>
-        <LogoIcon />
+        <Link href={"/"}>
+          <LogoIcon />
+        </Link>
         <div>
           <ul>
             <li>Daily Digest</li>
             <li>Design Tools</li>
-            <li>Tutorials</li>
+            <li>
+              <Link href={"/createPost"}>Make a Post</Link>
+            </li>
             <li></li>
           </ul>
           {user ? (
