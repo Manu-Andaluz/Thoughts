@@ -5,7 +5,7 @@ import { DefaultAvatarIcon, EditAvatarIcon } from "./icons";
 
 const PostImage = () => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
-  const [avatar, setAvatar] = useState("");
+  const [postImage, setPostImage] = useState("");
 
   const triggerFileInput = () => {
     if (fileInputRef.current) {
@@ -16,13 +16,13 @@ const PostImage = () => {
   return (
     <section className={style.container}>
       <div>
-        {avatar ? (
+        {postImage ? (
           <Image
             className={style.image}
             priority
             width={1000}
             height={1000}
-            src={avatar}
+            src={postImage}
             alt="profile_picture"
           />
         ) : (
@@ -42,10 +42,10 @@ const PostImage = () => {
           ref={fileInputRef}
           onChange={(e: any) => {
             if (e.target.files && e.target.files[0])
-              setAvatar(URL.createObjectURL(e.target.files[0]));
+              setPostImage(URL.createObjectURL(e.target.files[0]));
           }}
           id="fileInput"
-          name="user_image"
+          name="image_cover"
         />
       </label>
     </section>

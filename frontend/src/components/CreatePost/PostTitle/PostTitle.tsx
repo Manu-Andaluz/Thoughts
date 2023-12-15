@@ -5,7 +5,7 @@ const PostTitle = () => {
   return (
     <div className={style.container}>
       <div className={style.input_container}>
-        <input type="text" id="post-title" name="post-title" required />
+        <input type="text" id="post-title" name="title" required />
         <label htmlFor="post-title">Post Title</label>
       </div>
     </div>
