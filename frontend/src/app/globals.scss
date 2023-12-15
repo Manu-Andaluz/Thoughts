@@ -124,3 +124,22 @@ input {
     background-color: $primary-text-hover;
   }
 }
+
+.submit-btn {
+  cursor: pointer;
+  color: $secondary-font-color;
+  border: none;
+  padding: 8px 16px;
+  background-color: transparent;
+  width: 80%;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: $primary-blue;
+
+  &:hover {
+    background-color: $primary-blue-hover;
+  }
+}

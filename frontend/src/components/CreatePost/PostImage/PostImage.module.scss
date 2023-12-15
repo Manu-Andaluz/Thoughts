@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  .image {
+    max-width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  div {
+    display: flex;
+  }
+
+  label {
+    display: none;
+  }
+
+  button {
+    align-self: flex-end;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.default_img {
+  display: flex;
+  align-self: flex-start;
+  margin: auto;
+  height: 80px;
+  width: 80px;
+}
+
+.edit {
+}
+
+// export const StyledAvatar = styled.div`
+//   display: flex;
+// `;
+
+// export const StyledLabel = styled.label`
+//   display: none;
+// `;
+
+// export const StyledInput = styled.input``;
+
+// export const StyledEditIconContainer = styled.div`
+//   align-self: flex-end;
+//   cursor: pointer;
+// `;

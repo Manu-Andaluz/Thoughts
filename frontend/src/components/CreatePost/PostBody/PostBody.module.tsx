@@ -4,10 +4,8 @@ import "froala-editor/js/plugins/char_counter.min.js";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { createPost } from "../hooks/Post/createPost";
-
-const FroalaEditorComponent = dynamic(() => import("react-froala-wysiwyg"), {
-  ssr: false,
-});
+import style from "./PostBody.module.scss";
+import FroalaEditorComponent from "react-froala-wysiwyg";
 
 const PostBody = () => {
   const [title, setTitle] = useState();
@@ -24,10 +22,14 @@ const PostBody = () => {
   };
 
   return (
-    <div>
-      <input type="text" value={title} onChange={handleTitle} />
+    <div className={style.container}>
       <FroalaEditorComponent tag="textarea" onModelChange={handleModelChange} />
-      <button onClick={() => createPost({ title, body })}>Send</button>
+      <button
+        className="submit-btn"
+        onClick={() => createPost({ title, body })}
+      >
+        Send
+      </button>
     </div>
   );
 };

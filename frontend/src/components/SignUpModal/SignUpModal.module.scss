@@ -129,7 +129,7 @@
 
 .input_container input:focus {
   outline-width: 0;
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid $primary-blue;
 }
 
 .input_container label {
