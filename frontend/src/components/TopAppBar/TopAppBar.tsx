@@ -15,16 +15,15 @@ const TopAppBar = () => {
 
   const openSignUp = () => {
     const element = document.getElementById(
-      "signup-modal"
+      "signup-modal",
     ) as HTMLDialogElement;
     element?.showModal();
   };
 
   useEffect(() => {
     const isUser = localStorage.getItem("userToken");
-    if (isUser) setUser((data) => isUser);
-    console.log("asdsad");
-  }, [localStorage]);
+    if (isUser) setUser(() => isUser);
+  }, []);
 
   return (
     <header className={style.top_app_bar}>
@@ -46,7 +45,7 @@ const TopAppBar = () => {
               className={style.button_1}
               onClick={() => {
                 signOut();
-                setUser((data) => "");
+                setUser(() => "");
               }}
             >
               Sign Out
