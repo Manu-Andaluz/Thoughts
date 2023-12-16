@@ -7,7 +7,7 @@
   max-width: 1000px;
   padding: 0 1rem;
 
-  div {
+  .top {
     display: flex;
     margin: 0 auto;
     height: fit-content;
@@ -17,15 +17,6 @@
     h2 {
       font-size: 22px;
     }
-  }
-
-  section {
-    display: grid;
-    place-content: center;
-    height: fit-content;
-    margin: 0 auto;
-    margin-top: 100px;
-    gap: 40px;
   }
 }
 
@@ -44,4 +35,9 @@
 
 .see_more_btn:hover {
   background-color: $primary-text-hover;
+}
+
+.post_container {
+  display: grid;
+  margin-top: 30px;
 }

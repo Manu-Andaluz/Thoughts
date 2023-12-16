@@ -19,12 +19,12 @@ const RecentPosts = () => {
 
   return (
     <section className={style.recent_posts}>
-      <div>
+      <div className={style.top}>
         <h2>Daily Digest</h2>
         <button className={style.see_more_btn}>View all</button>
       </div>
 
-      <section>
+      <div className={style.post_container}>
         {posts?.map((item: Post, i: number) => (
           <Item
             title={item.title}
@@ -33,7 +33,7 @@ const RecentPosts = () => {
             key={i}
           />
         ))}
-      </section>
+      </div>
     </section>
   );
 };
