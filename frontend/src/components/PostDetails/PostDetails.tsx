@@ -4,7 +4,7 @@ import style from "./PostDetails.module.scss";
 import { getPostDetail } from "./hooks/GET/getPostDetail";
 
 const PostDetails = ({ id }: { id: number }) => {
-  const [post, setPost] = useState<Post>({});
+  const [post, setPost] = useState<Post>();
 
   useEffect(() => {
     const getData = async () => {
