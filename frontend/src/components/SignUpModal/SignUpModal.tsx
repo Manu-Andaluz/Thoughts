@@ -10,7 +10,7 @@ const SignUpModal = () => {
 
   const closeDialog = (e: any) => {
     const element = document.getElementById(
-      "signup-modal"
+      "signup-modal",
     ) as HTMLDialogElement;
     element.classList.add(style.close);
     const animationEndHandler = (event: any) => {
@@ -42,7 +42,13 @@ const SignUpModal = () => {
               </div>
 
               <div className={style.input_container}>
-                <input type="password" id="password" name="password" required />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  autoComplete=""
+                />
                 <label htmlFor="password">Password</label>
               </div>
 
