@@ -15,8 +15,6 @@ const RecentPosts = () => {
     getData();
   }, []);
 
-  console.log(posts);
-
   return (
     <section className={style.recent_posts}>
       <div className={style.top}>
@@ -27,6 +25,7 @@ const RecentPosts = () => {
       <div className={style.post_container}>
         {posts?.map((item: Post, i: number) => (
           <Item
+            postId={item.id}
             title={item.title}
             created={item.created}
             image_cover={item.image_cover}

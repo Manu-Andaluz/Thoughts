@@ -40,4 +40,9 @@
 .post_container {
   display: grid;
   margin-top: 30px;
+
+  a {
+    text-decoration: none;
+    color: $primary-font-color;
+  }
 }
