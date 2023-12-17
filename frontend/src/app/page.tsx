@@ -1,4 +1,3 @@
-import CreatePost from "@/components/CreatePost";
 import styles from "./page.module.scss";
 import Home from "@/components/Home/Home";
 import RecentPosts from "@/components/RecentPosts/RecentPosts";
