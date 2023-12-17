@@ -1,4 +1,4 @@
-type Post = {
+type PostDetails = {
   id: number;
   title: string;
   body: string;
