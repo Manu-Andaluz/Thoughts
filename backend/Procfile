@@ -1,1 +1,1 @@
-web: gunicorn MyNotes.wsgi
+web: gunicorn thoughts.wsgi
