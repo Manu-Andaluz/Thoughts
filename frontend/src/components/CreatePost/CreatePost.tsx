@@ -1,14 +1,21 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PostTitle from "./PostTitle/PostTitle";
 import style from "./CreatePost.module.scss";
 import PostImage from "./PostImage/PostImage";
 import { createPost } from "./hooks/Post/createPost";
 import { Editor } from "@tinymce/tinymce-react";
+import { redirect } from "next/navigation";
 
 const CreatePost = () => {
   const [body, setBody] = useState<string>("");
   const editorRef = useRef(null) as any;
+
+  useEffect(() => {
+    if (!localStorage.getItem("userToken")) {
+      redirect("/auth-error");
+    }
+  }, []);
 
   return (
     <section className={style.container}>

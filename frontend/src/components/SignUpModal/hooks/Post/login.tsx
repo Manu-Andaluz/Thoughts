@@ -9,6 +9,6 @@ export const login = async () => {
   const res = await axios.post(apiUrl, formData);
   if (res.data?.token) {
     localStorage.setItem("userToken", res.data.token);
-    window.location.reload();
+    window.location.replace("/");
   }
 };

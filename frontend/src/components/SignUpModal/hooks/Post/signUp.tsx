@@ -7,8 +7,9 @@ export const signUp = async () => {
   const formData = new FormData(form);
 
   const res = await axios.post(apiUrl, formData);
-  console.log(res);
+
   if (res.data?.token) {
     localStorage.setItem("userToken", res.data.token);
+    window.location.replace("/");
   }
 };
