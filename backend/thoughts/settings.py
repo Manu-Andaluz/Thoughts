@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
-    "cloudinary",   
+    "cloudinary",
 ]
 
 MIDDLEWARE = [

@@ -10,6 +10,7 @@ export const signUp = async () => {
 
   if (res.data?.token) {
     localStorage.setItem("userToken", res.data.token);
+    localStorage.setItem("thoughtsUserId", res.data.user.id);
     window.location.replace("/");
   }
 };

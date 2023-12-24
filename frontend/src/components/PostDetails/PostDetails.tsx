@@ -13,7 +13,7 @@ const PostDetails = ({ id }: { id: number }) => {
       converToHtml(data?.body);
     };
     getData();
-  }, []);
+  }, [id]);
 
   const converToHtml = (htmlString: string) => {
     const body = document.getElementById("post-body");
@@ -23,7 +23,8 @@ const PostDetails = ({ id }: { id: number }) => {
   return (
     <section className={style.container}>
       <h1>{post?.title}</h1>
-      <article id="post-body">Post title : {post?.title && post.title}</article>
+      <h2>Writteng by: {post?.author_username}</h2>
+      <article id="post-body"></article>
     </section>
   );
 };

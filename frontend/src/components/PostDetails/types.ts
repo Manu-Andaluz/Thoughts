@@ -4,4 +4,5 @@ type PostDetails = {
   body: string;
   image_cover: string;
   author: number | string;
+  author_username: string;
 };

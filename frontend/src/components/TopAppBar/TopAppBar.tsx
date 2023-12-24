@@ -4,6 +4,8 @@ import style from "./TopAppBar.module.scss";
 import { BurgerIcon, LogoIcon } from "./incons";
 import { signOut } from "../utils/hooks/signOut";
 import Link from "next/link";
+import { decodeToken } from "react-jwt";
+import { defaultOverrides } from "next/dist/server/require-hook";
 
 const TopAppBar = () => {
   const [user, setUser] = useState<string>();
@@ -22,7 +24,9 @@ const TopAppBar = () => {
 
   useEffect(() => {
     const isUser = localStorage.getItem("userToken");
-    if (isUser) setUser(() => isUser);
+    if (isUser) {
+      setUser(() => isUser);
+    }
   }, []);
 
   return (
