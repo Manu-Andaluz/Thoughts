@@ -11,7 +11,6 @@ const RecentPosts = () => {
     const getData = async () => {
       const data = await getRecentPosts();
       setPosts(data);
-      console.log("Posts : ", data);
     };
     getData();
   }, []);
