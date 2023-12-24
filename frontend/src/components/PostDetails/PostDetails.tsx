@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./PostDetails.module.scss";
 import { getPostDetail } from "./hooks/GET/getPostDetail";
+import { deletePost } from "./hooks/DELETE/deletePost";
 
 const PostDetails = ({ id }: { id: number }) => {
   const [post, setPost] = useState<PostDetails>();
@@ -18,6 +19,7 @@ const PostDetails = ({ id }: { id: number }) => {
   const converToHtml = (htmlString: string) => {
     const body = document.getElementById("post-body");
     if (body) body.innerHTML = htmlString;
+    console.log(body);
   };
 
   return (

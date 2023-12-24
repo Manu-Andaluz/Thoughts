@@ -5,7 +5,7 @@ export const createPost = async ({
 }: {
   editorContent: string;
 }) => {
-  const apiUrl = "https://thoughts-production.up.railway.app/post/all_posts/"; // Replace with your API endpoint
+  const apiUrl = "http://localhost:8000/post/all_posts/"; // Replace with your API endpoint
   const form = document.getElementById("create-post") as any;
   const formData = new FormData(form);
   const authorId = localStorage.getItem("thoughtsUserId");
@@ -15,7 +15,7 @@ export const createPost = async ({
 
   const res = await axios.post(apiUrl, formData);
 
-  if (res.statusText == "Created") {
+  if (res.data) {
     window.location.replace("/");
   }
 };

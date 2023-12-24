@@ -141,3 +141,12 @@ input {
     background-color: $primary-blue-hover;
   }
 }
+
+.ql-syntax {
+  margin: 1rem 0;
+  display: grid;
+  gap: 1rem;
+  background: $primary-blue;
+  color: white;
+  padding: 1rem;
+}
