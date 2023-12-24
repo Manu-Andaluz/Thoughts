@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 import style from "./SignUpModal.module.scss";
 import { CloseIcon } from "../ModalNavigationDrawer/iconts";
-import { signUp } from "./hooks/Post/signUp";
 import { login } from "./hooks/Post/login";
+import { signUp } from "./hooks/Post/signUp";
 
 const SignUpModal = () => {
   const [show, setShow] = useState("login");
 
   const closeDialog = (e: any) => {
     const element = document.getElementById(
-      "signup-modal",
+      "signup-modal"
     ) as HTMLDialogElement;
     element.classList.add(style.close);
     const animationEndHandler = (event: any) => {
