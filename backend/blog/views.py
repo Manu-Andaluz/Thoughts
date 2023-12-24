@@ -11,7 +11,7 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
 
     def get_queryset(self):
-        return Post.objects.all()
+        return Post.objects.all().order_by('-created')
 
 class ImageViewSet(viewsets.ModelViewSet):
     queryset = Image.objects.all()
