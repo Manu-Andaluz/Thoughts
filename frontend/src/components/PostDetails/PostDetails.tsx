@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./PostDetails.module.scss";
 import { getPostDetail } from "./hooks/GET/getPostDetail";
-import { deletePost } from "./hooks/DELETE/deletePost";
 
 const PostDetails = ({ id }: { id: number }) => {
   const [post, setPost] = useState<PostDetails>();
@@ -19,13 +18,12 @@ const PostDetails = ({ id }: { id: number }) => {
   const converToHtml = (htmlString: string) => {
     const body = document.getElementById("post-body");
     if (body) body.innerHTML = htmlString;
-    console.log(body);
   };
 
   return (
     <section className={style.container}>
-      <h1>{post?.title}</h1>
-      <h2>Writteng by: {post?.author_username}</h2>
+      <h1 className="post-details-title">{post?.title}</h1>
+      <h4>Writteng by: {post?.author_username}</h4>
       <article id="post-body"></article>
     </section>
   );

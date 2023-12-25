@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getPostDetail = async (postId: any) => {
+export const getPostDetail = async (postId: number | string) => {
   try {
     const apiUrl = `http://localhost:8000/post/all_posts/${postId}/`;
     const res = await axios.get(apiUrl);

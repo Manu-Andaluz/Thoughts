@@ -149,4 +149,21 @@ input {
   background: $primary-blue;
   color: white;
   padding: 1rem;
+  line-height: 22px;
+}
+
+#post-body {
+  p {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  ul,
+  ol {
+    margin-top: 20px;
+    display: grid;
+    gap: 16px;
+  }
 }
