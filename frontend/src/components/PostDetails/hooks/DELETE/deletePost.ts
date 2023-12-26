@@ -6,7 +6,7 @@ export const deletePost = async (postId: string | number) => {
   const res = await axios.delete(apiUrl);
   console.log("res : ", res);
 
-  if (res.data) {
+  if (res.data && typeof window !== "undefined") {
     window.location.replace("/");
   }
 };
