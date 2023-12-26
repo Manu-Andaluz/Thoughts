@@ -6,7 +6,7 @@ const AuthError = () => {
   return (
     <div className={style.container}>
       <WarningIcon />
-      <h1>You must be a user to post in this blog !!</h1>
+      <h1>You must be a user to access to this feature !!</h1>
     </div>
   );
 };

@@ -23,7 +23,9 @@ const PostDetails = ({ id }: { id: number }) => {
   return (
     <section className={style.container}>
       <h1 className="post-details-title">{post?.title}</h1>
-      <h4>Writteng by: {post?.author_username}</h4>
+      <h4>
+        Writteng by: <span>@{post?.author_username}</span>
+      </h4>
       <article id="post-body"></article>
     </section>
   );

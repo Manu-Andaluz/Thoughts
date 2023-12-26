@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+
 # settings.py
 import cloudinary
 import cloudinary.uploader
@@ -29,9 +30,9 @@ SECRET_KEY = "django-insecure-%shlg0z2fw2078f(wscy&kf43fg31k+sobm1sa8@5wsq!%(l#t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ['*']
+ALLOWED_HOST = ["*"]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,14 +42,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "blog",
     "account",
     "rest_framework",
     "rest_framework.authtoken",
     "corsheaders",
     "cloudinary",
+    "rest_framework_simplejwt",
 ]
+
+AUTH_USER_MODEL = "account.CustomUser"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -57,7 +60,6 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
 ]
 
@@ -140,17 +142,24 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CLOUDINARY = {
-    'CLOUD_NAME': 'ddax6s8kd',
-    'API_LEY': '817752394389265',
-    'API_SECRET': 'oFEodbcUHehRSzA7l0WgLX886sY',
+    "CLOUD_NAME": "ddax6s8kd",
+    "API_LEY": "817752394389265",
+    "API_SECRET": "oFEodbcUHehRSzA7l0WgLX886sY",
 }
 
 CLOUDINARY_URL = "cloudinary://817752394389265:oFEodbcUHehRSzA7l0WgLX886sY@ddax6s8kd"
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'ddax6s8kd',
-    'API_KEY': '817752394389265',
-    'API_SECRET': 'oFEodbcUHehRSzA7l0WgLX886sY',
+    "CLOUD_NAME": "ddax6s8kd",
+    "API_KEY": "817752394389265",
+    "API_SECRET": "oFEodbcUHehRSzA7l0WgLX886sY",
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        # ...
+    ],
+}
