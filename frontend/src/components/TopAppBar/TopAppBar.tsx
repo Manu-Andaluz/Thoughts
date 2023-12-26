@@ -4,7 +4,6 @@ import style from "./TopAppBar.module.scss";
 import { BurgerIcon, LogoIcon } from "./incons";
 import { signOut } from "../utils/hooks/signOut";
 import Link from "next/link";
-import jwt from "jsonwebtoken";
 
 const TopAppBar = () => {
   const [user, setUser] = useState<string>();
@@ -25,8 +24,6 @@ const TopAppBar = () => {
     const isUser = localStorage.getItem("userToken");
     if (isUser) {
       setUser(() => isUser);
-      const decoded = jwt.decode(isUser);
-      console.log("decoded : ", decoded);
     }
   }, []);
 
