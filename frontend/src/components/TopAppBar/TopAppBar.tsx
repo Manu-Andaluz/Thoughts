@@ -36,7 +36,13 @@ const TopAppBar = () => {
         <div>
           <ul>
             <li>Daily Digest</li>
-            <li>Design Tools</li>
+            {user ? (
+              <li>
+                <Link href={"/my-posts"}>My posts</Link>
+              </li>
+            ) : (
+              <li>Design Tools</li>
+            )}
             <li>
               <Link href={"/create-post"}>Make a Post</Link>
             </li>

@@ -12,9 +12,11 @@ export const MyPosts = () => {
 
   return (
     <div className={style.container}>
-      sad
-      {posts?.length &&
-        posts.map((item: Post) => <p key={item.id}>{item.title}</p>)}
+      {posts?.length ? (
+        posts.map((item: Post) => <p key={item.id}>{item.title}</p>)
+      ) : (
+        <h1>{"You don't have any posts yet"}</h1>
+      )}
     </div>
   );
 };
