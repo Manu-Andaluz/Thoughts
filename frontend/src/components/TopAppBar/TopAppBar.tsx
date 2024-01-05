@@ -15,6 +15,11 @@ const TopAppBar = () => {
     }
   }, []);
 
+  const openDrawerNav = () => {
+    const element = document.getElementById("nav-modal") as HTMLDialogElement;
+    element?.showModal();
+  };
+
   return (
     <header className={style.top_app_bar}>
       <nav>
@@ -54,6 +59,9 @@ const TopAppBar = () => {
             )}
           </ul>
         </div>
+        <span onClick={openDrawerNav}>
+          <BurgerIcon />
+        </span>{" "}
       </nav>
     </header>
   );
