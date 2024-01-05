@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const login = async () => {
   const apiUrl =
-    "https://thoughts-production.up.railway.app/account/auth/login/"; // Replace with your API endpoint
+    "https://thoughts-production.up.railway.app /account/auth/login/"; // Replace with your API endpoint
 
   const form = document.getElementById("login-up-form") as HTMLFormElement;
   const formData = new FormData(form);

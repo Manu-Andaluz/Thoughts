@@ -7,7 +7,8 @@ export const createPost = async ({
   editorContent: string;
 }) => {
   try {
-    const apiUrl = "https://thoughts-production.up.railway.app/post/all_posts/"; // Replace with your API endpoint
+    const apiUrl =
+      "https://thoughts-production.up.railway.app /post/all_posts/"; // Replace with your API endpoint
     const form = document.getElementById("create-post") as any;
     const formData = new FormData(form);
     const token = localStorage.getItem("userToken");

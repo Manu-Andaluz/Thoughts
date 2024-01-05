@@ -3,7 +3,7 @@
 .top_app_bar {
   display: flex;
   position: fixed;
-  height: 10vh;
+  height: 65px;
   width: 100%;
   box-shadow:
     rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
@@ -43,27 +43,22 @@
   }
 
   ul li {
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 4px;
-    transition: background $default-transition;
-    text-decoration: none;
-
-    a {
+    a,
+    button {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 4px;
+      transition: background $default-transition;
+      text-decoration: none;
+      font-size: $base-font-size;
+      font-weight: 600;
       text-decoration: none;
       color: $primary-font-color;
-    }
-
-    button {
       border: none;
-      padding: none;
-      cursor: pointer;
-      background: transparent;
+      &:hover {
+        background-color: $primary-text-hover;
+      }
     }
-  }
-
-  ul li:hover {
-    background-color: $primary-text-hover;
   }
 
   nav span {

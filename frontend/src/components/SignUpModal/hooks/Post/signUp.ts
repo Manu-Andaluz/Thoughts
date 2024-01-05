@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const signUp = async () => {
   const apiUrl =
-    "https://thoughts-production.up.railway.app/account/auth/register/"; // Replace with your API endpoint
+    "https://thoughts-production.up.railway.app /account/auth/register/"; // Replace with your API endpoint
 
   const form = document.getElementById("sign-up-form") as HTMLFormElement;
   const formData = new FormData(form);
