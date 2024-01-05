@@ -11,7 +11,7 @@ export const createPost = async ({
       "https://thoughts-production.up.railway.app /post/all_posts/"; // Replace with your API endpoint
     const form = document.getElementById("create-post") as any;
     const formData = new FormData(form);
-    const token = localStorage.getItem("userToken");
+    const token = localStorage.getItem("userToken") as any;
     const user = jwt.decode(token) as any;
 
     formData.set("body", editorContent);
