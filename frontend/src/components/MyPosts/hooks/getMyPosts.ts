@@ -8,7 +8,7 @@ export const getMyPosts = async () => {
       const user = jwt.decode(token) as any;
 
       const res = await axios.get<Post[]>(
-        `https://thoughts-production.up.railway.app/post/all_posts/by-author/?author=${user.username}`,
+        `https://thoughts-production.up.railway.app/post/all_posts/by-author/?author=${user.username}`
       );
 
       return res.data;

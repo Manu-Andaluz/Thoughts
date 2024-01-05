@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
-import style from "./SignUpModal.module.scss";
-import { signUp } from "./hooks/Post/signUp";
+import style from "./Login.module.scss";
 import Link from "next/link";
+import { login } from "./hooks/login";
 
-const SignUpModal = () => {
+const Login = () => {
   return (
     <section className={style.container}>
-      <h3>Sign up</h3>
+      <h3>Login</h3>
 
       <form
         className={style.from_container}
-        id="sign-up-form"
+        id="login-up-form"
         onSubmit={(e: any) => e.preventDefault()}
       >
         <div className={style.input_container}>
@@ -20,22 +20,22 @@ const SignUpModal = () => {
         </div>
 
         <div className={style.input_container}>
-          <input type="text" id="email" name="email" required />
-          <label htmlFor="email">Email</label>
-        </div>
-
-        <div className={style.input_container}>
-          <input type="password" id="password" name="password" required />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autoComplete=""
+          />
           <label htmlFor="password">Password</label>
         </div>
 
         <div className={style.form_buttons}>
-          <button className={style.btn} onClick={signUp}>
-            Sign Up
+          <button className={style.btn} onClick={login}>
+            Login
           </button>
-
-          <Link href={"login"}>
-            <button className="unlined-btn">Go to login</button>
+          <Link href={"/sign-up"}>
+            <button className="unlined-btn">Sign Up</button>
           </Link>
         </div>
       </form>
@@ -43,4 +43,4 @@ const SignUpModal = () => {
   );
 };
 
-export default SignUpModal;
+export default Login;

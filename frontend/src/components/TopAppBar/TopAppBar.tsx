@@ -8,18 +8,6 @@ import Link from "next/link";
 const TopAppBar = () => {
   const [user, setUser] = useState<string>();
 
-  const openDrawerNav = () => {
-    const element = document.getElementById("nav-modal") as HTMLDialogElement;
-    element?.showModal();
-  };
-
-  const openSignUp = () => {
-    const element = document.getElementById(
-      "signup-modal",
-    ) as HTMLDialogElement;
-    element?.showModal();
-  };
-
   useEffect(() => {
     const isUser = localStorage.getItem("userToken");
     if (isUser) {
@@ -46,28 +34,24 @@ const TopAppBar = () => {
             <li>
               <Link href={"/create-post"}>Make a Post</Link>
             </li>
-            <li></li>
+            {user ? (
+              <li>
+                <button
+                  onClick={() => {
+                    signOut();
+                    setUser(() => "");
+                  }}
+                >
+                  Sign Out
+                </button>
+              </li>
+            ) : (
+              <li>
+                <Link href={"login"}>Login</Link>
+              </li>
+            )}
           </ul>
-          {user ? (
-            <button
-              className={style.button_1}
-              onClick={() => {
-                signOut();
-                setUser(() => "");
-              }}
-            >
-              Sign Out
-            </button>
-          ) : (
-            <button className={style.button_1} onClick={openSignUp}>
-              Login
-            </button>
-          )}
         </div>
-
-        <span onClick={openDrawerNav}>
-          <BurgerIcon />
-        </span>
       </nav>
     </header>
   );

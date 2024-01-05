@@ -3,7 +3,6 @@ import { Open_Sans } from "next/font/google";
 import "./globals.scss";
 import TopAppBar from "@/components/TopAppBar/TopAppBar";
 import ModalNavigationDrawer from "@/components/ModalNavigationDrawer/ModalNavigationDrawer";
-import SignUpModal from "@/components/SignUpModal/SignUpModal";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -26,7 +25,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <TopAppBar />
         <ModalNavigationDrawer />
-        <SignUpModal />
         <main>{children}</main>
       </body>
     </html>
