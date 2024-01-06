@@ -1,9 +1,10 @@
 import axios from "axios";
+import apiUrl from "@/components/utils/apiUrl";
 
 export const getRecentPosts = async () => {
   try {
-    const apiUrl = "https://thoughts-production.up.railway.app/post/all_posts/";
-    const res = await axios.get(apiUrl);
+    const path = `${apiUrl}/post/all_posts/`;
+    const res = await axios.get(path);
     return res.data;
   } catch (error) {
     console.log(error);

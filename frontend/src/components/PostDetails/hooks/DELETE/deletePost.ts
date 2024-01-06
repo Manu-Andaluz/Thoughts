@@ -1,9 +1,10 @@
 import axios from "axios";
+import apiUrl from "@/components/utils/apiUrl";
 
 export const deletePost = async (postId: string | number) => {
-  const apiUrl = `https://thoughts-production.up.railway.app/post/all_posts/${postId}`;
+  const path = `${apiUrl}/post/all_posts/${postId}`;
 
-  const res = await axios.delete(apiUrl);
+  const res = await axios.delete(path);
 
   if (res.data && typeof window !== "undefined") {
     window.location.replace("/");

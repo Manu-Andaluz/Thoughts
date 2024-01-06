@@ -1,13 +1,13 @@
 import axios from "axios";
+import apiUrl from "@/components/utils/apiUrl";
 
 export const signUp = async () => {
-  const apiUrl =
-    "https://thoughts-production.up.railway.app/account/auth/register/"; // Replace with your API endpoint
+  const path = `${apiUrl}/account/auth/register/`;
 
   const form = document.getElementById("sign-up-form") as HTMLFormElement;
   const formData = new FormData(form);
 
-  const res = await axios.post(apiUrl, formData);
+  const res = await axios.post(path, formData);
 
   if (res.data?.token) {
     localStorage.setItem("userToken", res.data.token);

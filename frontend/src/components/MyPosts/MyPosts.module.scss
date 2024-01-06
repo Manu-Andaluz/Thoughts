@@ -1,3 +1,22 @@
 .container {
   padding: 15vh 0 0 0;
+
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  width: 100%;
+
+  & li {
+    display: flex;
+    margin: auto;
+    gap: 12px;
+    align-items: center;
+
+    & button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
 }
