@@ -43,15 +43,13 @@
   }
 
   ul li {
-    a,
-    button {
+    a {
       cursor: pointer;
       padding: 10px;
       border-radius: 4px;
       transition: background $default-transition;
       text-decoration: none;
       font-size: $base-font-size;
-      font-weight: 600;
       text-decoration: none;
       color: $primary-font-color;
       border: none;
@@ -70,17 +68,20 @@
   }
 }
 
-.button_1 {
-  font-size: $base-font-size;
-  border: 0;
-  border-radius: 4px;
-  background-color: $primary-blue;
-  padding: 5px 12px;
-  color: $secondary-font-color;
+.button_sign_out {
+  border: none;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
   transition: background $default-transition;
+  text-decoration: none;
+  font-size: 14px;
+  color: $primary-font-color;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
 
   &:hover {
-    background-color: $primary-blue-hover;
+    background-color: $primary-text-hover;
   }
 }

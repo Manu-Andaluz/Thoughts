@@ -43,18 +43,18 @@ const TopAppBar = () => {
             </li>
             {user ? (
               <li>
-                <button
+                <a
                   onClick={() => {
                     signOut();
                     setUser(() => "");
                   }}
                 >
                   Sign Out
-                </button>
+                </a>
               </li>
             ) : (
               <li>
-                <Link href={"login"}>Login</Link>
+                <Link href={"/login"}>Login</Link>
               </li>
             )}
           </ul>

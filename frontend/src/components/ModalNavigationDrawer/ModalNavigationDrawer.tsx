@@ -18,13 +18,18 @@ import { signOut } from "../utils/hooks/signOut";
 
 const ModalNavigationDrawer = () => {
   const [user, setUser] = useState<string>();
-  const path = usePathname();
-  const account = false;
+  const links = {
+    home: "/",
+    my_posts: "/my-posts",
+    docs: "/about",
+  };
 
-  const closeDrawerNav = (e: any) => {
+  const path = usePathname();
+
+  const closeDrawerNav = () => {
     const element = document.getElementById("nav-modal") as HTMLDialogElement;
     element.classList.add(style.close);
-    const animationEndHandler = (event: any) => {
+    const animationEndHandler = () => {
       element.close();
       element.classList.remove(style.close);
       element.removeEventListener("animationend", animationEndHandler);
@@ -34,14 +39,14 @@ const ModalNavigationDrawer = () => {
 
   const openSignUp = () => {
     const element = document.getElementById(
-      "signup-modal"
+      "signup-modal",
     ) as HTMLDialogElement;
     element?.showModal();
   };
 
   useEffect(() => {
     const isUser = localStorage.getItem("userToken");
-    if (isUser) setUser((data) => isUser);
+    if (isUser) setUser(isUser);
   }, []);
 
   return (
@@ -52,45 +57,13 @@ const ModalNavigationDrawer = () => {
             <CloseIcon />
           </span>
           <ul className={style.list}>
-            {/* <li className={style.user_info}> */}
-            {/* {authState && (
-                <>
-                  <div>
-                    {userAvatar ? (
-                      <Image
-                        src={userAvatar}
-                        width={40}
-                        height={40}
-                        alt="User picture"
-                        className={style.user_picture}
-                      />
-                    ) : (
-                      <Image
-                        src={userDefaultAvatar}
-                        width={40}
-                        height={40}
-                        alt="User picture"
-                        className={style.user_picture}
-                      />
-                    )}
-                    {userName && <h5>{userName}</h5>}
-                    <p className={style.user_mail}>{userMail}</p>
-                  </div>
-                  <a href="#" className={style.anchor}>
-                    Account
-                  </a>
-                  <Link href="/account" className={style.account_link}>
-                    Account
-                  </Link>
-                </>
-              )} */}
-            {/* <a href="#" className={style.anchor}>
-                Account
-              </a>
-            </li> */}
-            {/* {userMail && <hr />} */}
             <li>
-              <Link href={``} className={style.icon_list}>
+              <Link
+                href={``}
+                className={`${style.icon_list} ${
+                  path === links.home && style.icon_list_active
+                }`}
+              >
                 <HomeIcon />
                 Home
               </Link>
@@ -117,7 +90,12 @@ const ModalNavigationDrawer = () => {
               </Link>
             </li>
             <li>
-              <Link href={``} className={style.icon_list}>
+              <Link
+                href={`/my-posts`}
+                className={`${style.icon_list} ${
+                  path === links.my_posts && style.icon_list_active
+                }`}
+              >
                 <FolderIcon />
                 Your Posts
               </Link>
@@ -132,7 +110,7 @@ const ModalNavigationDrawer = () => {
                   className={style.icon_list}
                   onClick={() => {
                     signOut();
-                    setUser((data) => "");
+                    setUser("");
                   }}
                 >
                   <AccountIcon />
@@ -156,7 +134,12 @@ const ModalNavigationDrawer = () => {
               <p className={style.subTitle}>Other</p>
             </li>
             <li>
-              <Link href={``} className={style.icon_list}>
+              <Link
+                href={`/about`}
+                className={`${style.icon_list} ${
+                  path === links.docs && style.icon_list_active
+                }`}
+              >
                 <DocsIcon />
                 Docs
               </Link>

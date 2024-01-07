@@ -142,7 +142,7 @@
 
 .icon_list_active {
   border-radius: 28px;
-  background-color: $secondary-font-color;
+  background-color: $primary-text-hover;
   padding: 0 12px;
 }
 
@@ -175,11 +175,18 @@
 }
 
 .icon_list span {
-  font-variation-settings: "wght" 350, "GRAD" 0, "opsz" 24;
+  font-variation-settings:
+    "wght" 350,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 .icon_list_active span {
-  font-variation-settings: "FILL" 1, "wght" 350, "GRAD" 0, "opsz" 24;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 350,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 @media only screen and (min-width: 500px) {
