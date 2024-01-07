@@ -7,6 +7,10 @@ interface Props {
   children: React.ReactNode;
 }
 
+export type IsUser = {
+  user: string;
+};
+
 export const AuthContextProvider = ({ children }: Props) => {
   const [user, setUser] = useState<string | undefined>();
 
@@ -18,7 +22,9 @@ export const AuthContextProvider = ({ children }: Props) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, setUser }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 

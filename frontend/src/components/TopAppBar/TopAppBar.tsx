@@ -1,13 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./TopAppBar.module.scss";
 import { BurgerIcon, LogoIcon } from "./incons";
 import { signOut } from "../utils/hooks/signOut";
 import Link from "next/link";
-import { IsUser, useAuthContext } from "../utils/AuthContext";
+import { useAuthContext } from "../utils/AuthContext";
 
 const TopAppBar = () => {
-  const { user } = useAuthContext() as IsUser;
+  const { user, setUser } = useAuthContext() as any;
 
   const openDrawerNav = () => {
     const element = document.getElementById("nav-modal") as HTMLDialogElement;

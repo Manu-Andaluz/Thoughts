@@ -1,3 +1,3 @@
-const url = `https://thoughts-production.up.railway.app`;
+const url = `http://localhost:8000`;
 
 export default url;

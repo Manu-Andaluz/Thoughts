@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./ModalNavigationDrawer.module.scss";
 import Link from "next/link";
 import {
@@ -15,10 +15,10 @@ import {
 } from "./iconts";
 import { usePathname } from "next/navigation";
 import { signOut } from "../utils/hooks/signOut";
-import { IsUser, useAuthContext } from "../utils/AuthContext";
+import { useAuthContext } from "../utils/AuthContext";
 
 const ModalNavigationDrawer = () => {
-  const { user } = useAuthContext() as IsUser;
+  const { user, setUser } = useAuthContext() as any;
 
   const links = {
     home: "/",
