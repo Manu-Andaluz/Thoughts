@@ -17,7 +17,7 @@ const TopAppBar = () => {
   return (
     <header className={style.top_app_bar}>
       <nav>
-        <Link href={"/"}>
+        <Link href={"/"} className={style.logo}>
           <LogoIcon />
         </Link>
         <div>
