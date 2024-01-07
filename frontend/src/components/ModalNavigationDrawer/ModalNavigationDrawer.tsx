@@ -15,9 +15,11 @@ import {
 } from "./iconts";
 import { usePathname } from "next/navigation";
 import { signOut } from "../utils/hooks/signOut";
+import { IsUser, useAuthContext } from "../utils/AuthContext";
 
 const ModalNavigationDrawer = () => {
-  const [user, setUser] = useState<string>();
+  const { user } = useAuthContext() as IsUser;
+
   const links = {
     home: "/",
     my_posts: "/my-posts",
@@ -43,11 +45,6 @@ const ModalNavigationDrawer = () => {
     ) as HTMLDialogElement;
     element?.showModal();
   };
-
-  useEffect(() => {
-    const isUser = localStorage.getItem("userToken");
-    if (isUser) setUser(isUser);
-  }, []);
 
   return (
     <dialog className={style.dialog} id="nav-modal" onClick={closeDrawerNav}>

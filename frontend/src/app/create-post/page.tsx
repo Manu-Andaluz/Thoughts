@@ -10,7 +10,7 @@ const DynamicCreatePost = dynamic(
 
 const Page = () => {
   return (
-    <div style={{ padding: "15vh 0 1rem 0" }}>
+    <div style={{ padding: "1rem 0 1rem 0" }}>
       <DynamicCreatePost />
     </div>
   );

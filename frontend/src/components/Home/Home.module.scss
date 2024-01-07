@@ -4,13 +4,11 @@
   color: $primary-font-color;
   width: 100%;
   display: grid;
-  height: 100vh;
   place-content: center;
   gap: 40px;
   text-align: center;
-  padding: 0;
-  margin: auto;
   padding: 0 1rem;
+  margin: 50px auto 100px auto;
 
   h2 {
     margin: auto;

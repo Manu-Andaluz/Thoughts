@@ -3,7 +3,6 @@
 .post a {
   display: grid;
   align-items: center;
-  place-content: center;
   gap: 30px;
   border-radius: 4px;
   padding: 10px 10px 10px 30px;
@@ -15,6 +14,7 @@
 
   @media screen and (min-width: 780px) {
     grid-template-columns: 1fr auto;
+    place-content: center;
   }
 
   img {

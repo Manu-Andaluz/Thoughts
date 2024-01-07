@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.scss";
 import TopAppBar from "@/components/TopAppBar/TopAppBar";
 import ModalNavigationDrawer from "@/components/ModalNavigationDrawer/ModalNavigationDrawer";
+import { AuthContextProvider } from "@/components/utils/AuthContext";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -23,8 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <head>{/* Include your meta tags, title, stylesheets, etc. here */}</head>
       <body className={inter.className}>
-        <TopAppBar />
-        <ModalNavigationDrawer />
+        <AuthContextProvider>
+          <TopAppBar />
+          <ModalNavigationDrawer />
+        </AuthContextProvider>
         <main>{children}</main>
       </body>
     </html>

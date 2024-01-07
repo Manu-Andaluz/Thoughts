@@ -2,7 +2,8 @@
 
 .top_app_bar {
   display: flex;
-  position: fixed;
+  top: 0;
+  position: sticky;
   height: 65px;
   width: 100%;
   box-shadow:
@@ -11,6 +12,7 @@
   justify-content: center;
   background-color: white;
   z-index: 99;
+
   nav {
     display: flex;
     justify-content: space-between;

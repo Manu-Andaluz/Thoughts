@@ -31,7 +31,7 @@ const Item = ({
           <h5>{formattedDate} </h5>
           <h4>{title}</h4>
         </div>
-        <Image src={image_cover} width={300} height={211} alt="post_cover" />
+        <Image src={image_cover} width={350} height={211} alt="post_cover" />
       </Link>
     </article>
   );

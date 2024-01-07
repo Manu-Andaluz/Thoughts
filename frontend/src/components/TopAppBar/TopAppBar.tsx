@@ -4,16 +4,10 @@ import style from "./TopAppBar.module.scss";
 import { BurgerIcon, LogoIcon } from "./incons";
 import { signOut } from "../utils/hooks/signOut";
 import Link from "next/link";
+import { IsUser, useAuthContext } from "../utils/AuthContext";
 
 const TopAppBar = () => {
-  const [user, setUser] = useState<string>();
-
-  useEffect(() => {
-    const isUser = localStorage.getItem("userToken");
-    if (isUser) {
-      setUser(() => isUser);
-    }
-  }, []);
+  const { user } = useAuthContext() as IsUser;
 
   const openDrawerNav = () => {
     const element = document.getElementById("nav-modal") as HTMLDialogElement;
@@ -45,8 +39,8 @@ const TopAppBar = () => {
               <li>
                 <a
                   onClick={() => {
-                    signOut();
                     setUser(() => "");
+                    signOut();
                   }}
                 >
                   Sign Out
