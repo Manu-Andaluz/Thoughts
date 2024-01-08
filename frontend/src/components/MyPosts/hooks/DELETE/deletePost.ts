@@ -7,7 +7,7 @@ export const deletePost = async (postId: number) => {
     if (token) {
       const user = jwt.decode(token) as any;
 
-      alert("This feature is not available for now");
+      alert("This feature is not ready yet");
       // const res = await axios.delete(``);
 
       // return res.data;
