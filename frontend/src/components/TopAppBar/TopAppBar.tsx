@@ -30,7 +30,9 @@ const TopAppBar = () => {
                 <Link href={"/my-posts"}>My posts</Link>
               </li>
             ) : (
-              <li>Design Tools</li>
+              <li>
+                <Link href={""}>Design Tools</Link>
+              </li>
             )}
             <li>
               <Link href={"/create-post"}>Make a Post</Link>
