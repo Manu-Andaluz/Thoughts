@@ -3,14 +3,11 @@
   align-items: center;
   height: 90vh;
   display: grid;
+  gap: 16px;
   place-content: center;
   width: 100%;
   text-align: center;
-  @media (min-width: 450px) {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-  }
+  max-height: calc(100vh - 65px);
 
   h1 {
     font-weight: 500;
@@ -20,11 +17,16 @@
     }
   }
 
-  svg {
-    @media (max-width: 450px) {
-      display: flex;
-      justify-content: center;
-      margin: auto;
+  img {
+    margin: auto;
+    height: auto;
+    width: 80%;
+    max-width: 100%;
+    @media (min-width: 400px) {
+      width: 300px;
     }
+  }
+
+  svg {
   }
 }
