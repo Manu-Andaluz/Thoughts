@@ -1,5 +1,6 @@
 import axios from "axios";
 import jwt from "jsonwebtoken";
+import apiUrl from "@/components/utils/apiUrl";
 
 export const deletePost = async (postId: number) => {
   try {
@@ -7,10 +8,10 @@ export const deletePost = async (postId: number) => {
     if (token) {
       const user = jwt.decode(token) as any;
 
-      alert("This feature is not ready yet");
-      // const res = await axios.delete(``);
+      const res = await axios.delete(`${apiUrl}/post/all_posts/${postId}/`);
+      console.log(res);
 
-      // return res.data;
+      return res.data;
     }
   } catch (error) {
     console.log(error);
