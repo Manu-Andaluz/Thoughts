@@ -6,12 +6,18 @@
   place-content: center;
   margin: auto;
   background-color: white;
-  padding: 1.5rem;
-  border-radius: 28px;
-  padding-top: 50px;
   width: 100%;
   max-width: 100%;
   height: calc(100vh - 65px);
+  background-color: #d9d9e2;
+}
+
+.modal {
+  display: grid;
+  gap: 20px;
+  background-color: white;
+  border-radius: 26px;
+  padding: 30px;
 
   h3 {
     display: flex;
