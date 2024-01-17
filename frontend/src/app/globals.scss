@@ -143,9 +143,7 @@ input {
 }
 
 .ql-syntax {
-  margin: 1rem 0;
   display: grid;
-  gap: 1rem;
   background: $primary-blue;
   color: white;
   padding: 1rem;
@@ -161,7 +159,7 @@ input {
   }
   h1 {
     font-size: 30px;
-    margin-bottom: 10px;
+    margin: 15px 0 5px 0;
   }
   ul,
   ol {
